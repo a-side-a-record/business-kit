@@ -130,7 +130,7 @@
       <div class="diag-panel">
         <div class="step-label">STEP ${areaOrderIdx+2} / ${DIAG_AREAS.length+1} <span class="count">· 영역당 약 1분</span></div>
         <div class="area-header">
-          <div class="area-icon" style="background:${area.color};color:#fff;">${area.icon}</div>
+          <div class="area-icon" style="background:${area.color};">${area.icon}</div>
           <div>
             <h2 class="area-title">${area.name} 점검</h2>
           </div>
