@@ -10,7 +10,7 @@ const DIAG_AREAS = [
     id: 'place',
     name: '스마트플레이스',
     icon: '📍',
-    color: 'var(--teal)',
+    color: 'var(--accent-cyan)',
     desc: '주소·영업시간 같은 기본 정보부터 리뷰 관리, 예약 동선까지 점검합니다.',
     questions: [
       { t:'업체명/업종/카테고리가 정확히 설정돼 있다.', type:'yn', w:1 },
@@ -39,7 +39,7 @@ const DIAG_AREAS = [
     id: 'blog',
     name: '블로그',
     icon: '✍️',
-    color: 'var(--amber)',
+    color: 'var(--accent-orange)',
     desc: '발행 빈도, 키워드, 글의 구성(후킹→근거→CTA)까지 점검합니다.',
     questions: [
       { t:'블로그 프로필/소개에 업종/지역/예약·문의(CTA)가 있다.', type:'yn', w:1 },
@@ -68,7 +68,7 @@ const DIAG_AREAS = [
     id: 'ai',
     name: 'AI 활용도',
     icon: '🤖',
-    color: 'var(--red)',
+    color: 'var(--ink)',
     desc: '콘텐츠 기획·작성부터 자동화 도구 활용 의지까지 점검합니다.',
     questions: [
       { t:'글감이 없을 때 AI로 아이디어를 10개 뽑아본 적이 있다.', type:'yn', w:1 },
@@ -92,7 +92,7 @@ const DIAG_AREAS = [
     id: 'sns',
     name: 'SNS(인스타그램)',
     icon: '📸',
-    color: 'var(--ink)',
+    color: 'var(--primary-neutral)',
     desc: '프로필 세팅부터 업로드 루틴, 예약·문의 전환 동선까지 점검합니다.',
     questions: [
       { t:'프로필 사진이 매장/브랜드를 명확히 보여준다.', type:'yn', w:1 },
