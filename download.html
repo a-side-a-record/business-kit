@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>다운로드 (UI 목업) | 사장님 홍보 진단 키트</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+  <section class="section" style="padding-top:40px;">
+    <div class="wrap-narrow">
+      <div class="mock-banner">이 다운로드 화면은 UI 목업입니다 · 실제 파일이 제공되지 않습니다</div>
+
+      <div id="dl-root"></div>
+
+      <div class="legal-box">
+        <strong>제공물 전달 및 저작권 안내</strong><br/><br/>
+        · 제공물은 <strong>사이트의 다운로드 페이지에서만</strong> 제공됩니다. 이메일에는 다운로드 페이지 링크만 안내되며, 파일 첨부나 외부 링크로는 제공하지 않습니다.<br/>
+        · 구매자 본인(1인 또는 1사업자 사용)에 한해 <strong>평생 재다운로드</strong>가 가능합니다.<br/>
+        · 링크·파일 공유, 재배포, 재판매, 2차 배포(유료·무료 모두)는 <strong>엄격히 금지</strong>됩니다.<br/>
+        · 위반이 확인되면 다운로드 권한 제한 등 서비스 이용 제한 및 법적 조치를 포함한 대응이 이뤄질 수 있습니다.<br/>
+        · 환불이 완료되면 다운로드 권한은 즉시 종료됩니다.<br/>
+        · 계정 분실/이메일 변경 등은 본인 확인 후 계정 복구로 지원하며, 외부로의 파일 전달은 불가합니다.
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+(function(){
+  const SETS = {
+    starter: { name:'Starter', items:[
+      { n:'전자책 (PDF)', m:'전체 가이드 · 42p' },
+      { n:'세팅 체크리스트', m:'PDF' },
+      { n:'프롬프트 30개', m:'구글시트' },
+      { n:'콘텐츠 관리 구글시트', m:'구글시트' },
+      { n:'설치 영상 2~3개', m:'재생 링크' },
+    ]},
+    pro: { name:'Pro', items:[
+      { n:'전자책 (PDF)', m:'전체 가이드 · 42p' },
+      { n:'세팅 체크리스트', m:'PDF' },
+      { n:'프롬프트 150개', m:'구글시트' },
+      { n:'콘텐츠 관리 구글시트', m:'구글시트' },
+      { n:'Make Scenario', m:'가져오기 파일' },
+      { n:'n8n Workflow', m:'가져오기 파일' },
+      { n:'Canva 템플릿', m:'편집 가능 링크' },
+      { n:'리뷰관리 시트', m:'구글시트' },
+      { n:'설치 영상 전체', m:'재생 링크' },
+    ]},
+    pack: { name:'업종 확장팩', items:[
+      { n:'업종 전용 프롬프트', m:'구글시트' },
+      { n:'업종 전용 Canva 템플릿', m:'편집 가능 링크' },
+      { n:'업종 전용 블로그 가이드', m:'PDF' },
+      { n:'업종 전용 리뷰 대응 세트', m:'PDF' },
+      { n:'업종 전용 Make 템플릿', m:'가져오기 파일(선택)' },
+    ]},
+  };
+  const params = new URLSearchParams(location.search);
+  const key = SETS[params.get('plan')] ? params.get('plan') : 'starter';
+  const set = SETS[key];
+  document.getElementById('dl-root').innerHTML = `
+    <h1 style="font-size:28px;margin-bottom:6px;">${set.name} 다운로드</h1>
+    <p style="color:var(--ink-soft);margin-bottom:26px;">구매하신 구성을 아래에서 다운로드하세요. 평생 재다운로드가 가능합니다.</p>
+    <div class="download-list">
+      ${set.items.map(it => `
+        <div class="dl-item">
+          <div>
+            <div class="dl-name">📄 ${it.n}</div>
+            <div class="dl-meta">${it.m}</div>
+          </div>
+          <button class="btn btn-dark" onclick="alert('데모 화면입니다. 실제 파일은 제공되지 않습니다.')">다운로드</button>
+        </div>
+      `).join('')}
+    </div>
+  `;
+})();
+</script>
+</body>
+</html>
